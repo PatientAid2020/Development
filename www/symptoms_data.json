@@ -1,0 +1,92 @@
+{
+   "symptoms":[
+      {
+         "id":1,
+         "symptom_description":"a temperature of greater than 100.4",
+         "scale":3,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":2,
+         "symptom_description":"Body Ache",
+         "scale":3,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":3,
+         "symptom_description":"Cough",
+         "scale":5,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":4,
+         "symptom_description":"Breathing Difficulty",
+         "scale":5,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":5,
+         "symptom_description":"Anosmia",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":6,
+         "symptom_description":"been tested positive for COVID-19",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":7,
+         "symptom_description":"been in close contact for anyone who has tested positive for COVID-19",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":8,
+         "symptom_description":"been felling confused",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":9,
+         "symptom_description":"been smoking cigarettes, second hand smoking or vaping",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":10,
+         "symptom_description":"chest tightness",
+         "scale":5,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      },
+      {
+         "id":11,
+         "symptom_description":" any associated diarrhea or abdominal pain",
+         "scale":1,
+         "correlated_factor":1,
+         "binary":false,
+         "tenant_id":null
+      }
+   ]
+}

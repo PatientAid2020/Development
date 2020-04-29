@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Sass Databaset Setup Test</title>
+  <style>* { font-family: Helvetica, Arial, sans-serif }</style>
+</head>
+<body>
+  <h1>Patient Sass Databaset Setup Test</h1>
+  <table border=1>
+  <tr>
+    <th>
+      Table name
+    </th>
+  </tr>
+  {% for row in rows %}
+    <tr>
+        <td>{{ row[0] }}</td>
+    </tr>
+    {% endfor %}
+  {{result}}
+</body>
+</html>

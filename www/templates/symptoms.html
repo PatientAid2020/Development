@@ -1,0 +1,19 @@
+<div id="app">
+  <v-app>
+    <v-content>
+    <v-content>Do you have any of the following symtpoms?</v-content>
+    <v-card>
+     <v-row v-for="s in cur_page_symptoms" v-bind:key="s.id">
+      <v-col>
+       <v-checkbox v-model="symptoms_info[s.id]" class="mx-2"
+        :label="s.symptom_description"></v-checkbox>
+      </v-col>
+     </v-row>
+     <v-row>
+      <v-col v-if="have_prev()" ><v-btn small color="primary" @click="prev_page()">Back</v-btn></v-col>
+      <v-col v-if="have_next()" ><v-btn small color="primary" @click="next_page()">Next</v-btn></v-col>
+     </v-row>
+     </v-card>
+    </v-content>
+  </v-app>
+</div>

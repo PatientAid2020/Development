@@ -1,0 +1,40 @@
+version: '2'
+services:
+  www-base:
+    build: www-base/.
+    container_name: www-base
+    image: patient-sass-base
+  www:
+    build:
+      context: www/.
+
+    ports:
+      - "8001:80"
+    links:
+      - db
+      - www-base
+    depends_on:
+      - db
+    env_file: db.conf
+    networks:
+      vpcbr:
+        ipv4_address: 172.11.0.3
+
+  db:
+    build: db/.
+    ports:
+      - "3307:3306"
+    volumes:
+      - /var/lib/mysql
+    env_file: db.conf
+    networks:
+      vpcbr:
+        ipv4_address: 172.11.0.2
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.11.0.0/24
+         gateway: 172.11.0.1
