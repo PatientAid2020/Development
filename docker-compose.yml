@@ -1,0 +1,31 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ./app
+    image: patientaid-app
+    environment:
+      - PROXY_TARGET=http://server:5000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    stdin_open: true
+  server:
+    build:
+      context: ./server
+    image: patientaid-server
+    environment:
+      - DB_URI=postgresql://postgres:@db/postgres
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+      - /app/.venv
+  db:
+    build:
+      context: ./db
+    image: patientaid-db
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust

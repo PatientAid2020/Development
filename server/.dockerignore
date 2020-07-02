@@ -1,0 +1,7 @@
+# Ignore everything
+**
+
+# Except for dependencies and source
+!Pipfile
+!Pipfile.lock
+!server/
