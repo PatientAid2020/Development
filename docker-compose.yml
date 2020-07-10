@@ -1,40 +1,31 @@
-version: '2'
+version: "3"
 services:
-  www-base:
-    build: www-base/.
-    container_name: www-base
-    image: patient-sass-base
-  www:
+  app:
     build:
-      context: www/.
-
+      context: ./app
+    image: patientaid-app
+    environment:
+      - PROXY_TARGET=http://server:5000
     ports:
-      - "8001:80"
-    links:
-      - db
-      - www-base
-    depends_on:
-      - db
-    env_file: db.conf
-    networks:
-      vpcbr:
-        ipv4_address: 172.11.0.3
-
-  db:
-    build: db/.
-    ports:
-      - "3307:3306"
+      - "3000:3000"
     volumes:
-      - /var/lib/mysql
-    env_file: db.conf
-    networks:
-      vpcbr:
-        ipv4_address: 172.11.0.2
-
-networks:
-  vpcbr:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 172.11.0.0/24
-         gateway: 172.11.0.1
+      - ./app:/app
+      - /app/node_modules
+    stdin_open: true
+  server:
+    build:
+      context: ./server
+    image: patientaid-server
+    environment:
+      - DB_URI=postgresql://postgres:@db/postgres
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+      - /app/.venv
+  db:
+    build:
+      context: ./db
+    image: patientaid-db
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
