@@ -1,8 +1,6 @@
 # PatientAid
 
 The [PatientAid](https://patientaid.me) project's mission is to provide a software service to connect potential COVID-19 patients to healthcare providers through a privacy-first, comprehensive self-service and to deliver actionionable guidance from providers to patients in real time.
-  
-As part of a larger initiative from NECSI with the explicit goal of stopping the spread of nCov-2019 / COVID19, it will rely on collaboration among a group of people who volunteer to help from various disciplines to make this happen.
 
 As part of [a larger initiative](https://www.endcoronavirus.org/) from the [New England Complex Systems Institute (NECSI)](https://necsi.edu/) with the explicit goal of stopping the spread of COVID-19, the PatientAid project relies on collaboration among a group of volunteers from various disciplines across multiple timezones.
 
