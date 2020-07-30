@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, Response, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -18,6 +18,17 @@ def hello_world():
         return 'Something went wrong :('
     else:
         return f'The db says {val}'
+
+@app.route('/api/submit')
+def submit():
+    
+    user_data = request.json
+    #do something
+    print(user_data)
+
+    return Response(headers={
+        'Status':202,
+        })
 
 
 if __name__ == '__main__':
