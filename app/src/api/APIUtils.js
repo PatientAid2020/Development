@@ -60,6 +60,11 @@ Donec fermentum massa porttitor, accumsan orci in, efficitur nisi. Suspendisse e
 Donec iaculis leo id iaculis luctus. Cras malesuada consequat nibh nec eleifend. Phasellus consequat quam sem, sit amet pharetra elit bibendum a. Duis sed diam consectetur, molestie orci non, rutrum mi. Nullam lorem nunc, volutpat nec bibendum vel, pellentesque et dui. Proin vel magna eget magna dignissim fringilla eu ut dolor. Quisque porttitor sollicitudin leo ut porttitor.
 `;
 
+const DUMMY_PROVIDER_INFO = {
+  'name':'Sequoia Hospital', 
+  'address':'170 Alameda de las Pulgas, Redwood City, CA 94062'
+};
+
 export default class APIUtils {
   static getPolicy(providerId) {
     return DUMMY_PRIVACY_POLICY;
@@ -69,6 +74,11 @@ export default class APIUtils {
     return DUMMY_FORM;
   }
 
+  //could also hardcode basic provider info along with the ID
+  static getProviderInfo(providerId) {
+    return DUMMY_PROVIDER_INFO;
+  }
+  
   static postFormData(providerId, userId, state) {
     fetch('http://localhost:5000/api/submit', {
       method: 'POST',

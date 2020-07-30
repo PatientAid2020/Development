@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Button, Bar, Checkbox, GU } from '@aragon/ui';
+import { Box, Button, Checkbox, GU } from '@aragon/ui';
 import styled from 'styled-components';
 import APIUtils from '../api/APIUtils';
-import { Title4, Body2 } from './Text';
+import { Title4, Body2 } from './TextStyles';
 
 const CenteredBox = styled(Box)`
   text-align:center;
@@ -12,7 +12,7 @@ const CheckboxWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: ${2 * GU}px;
+  margin-bottom: ${1 * GU}px;
 `;
 
 const ScrollBox = styled(Box)`
